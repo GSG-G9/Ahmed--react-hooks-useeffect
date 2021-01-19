@@ -10,20 +10,28 @@ const Giphy = () => {
     )
       .then((res) => res.json())
       .then((res) => {
-        setImages(res.data.slice(0,10))
-    })
-      
-  },[input]);
+        setImages(res.data.slice(0, 10));
+      });
+  }, [input]);
 
   const handelValue = (e) => {
-      console.log(e.target.value);
+    console.log(e.target.value);
     setInput(e.target.value);
   };
   console.log(images);
   return (
     <div>
-      <input onChange={handelValue} type='text' />
-      {images.length>0?(images.map((image)=><img src={image.images.preview_gif.url} alt=''/>)):<p>No Data</p>}
+      <label>
+        Giphy:
+        <input onChange={handelValue} type="text" />
+      </label>
+      {images.length > 0 ? (
+        images.map((image) => <img src={image.images.preview_gif.url} alt="Giphy" />)
+      ) : (
+        <p style={{ hight: "100px", display: "block", color: "Red" }}>
+          Sorry No Data
+        </p>
+      )}
     </div>
   );
 };

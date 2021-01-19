@@ -18,13 +18,13 @@ const MouseMove = () => {
         }
 
     }, [x, y])
-    const styleObj = { backgroundColor: x > W / 2 ? "blue" : "tomato" }
+   // const styleObj = { backgroundColor: x > W / 2 ? "blue" : "tomato" }
 
 
 
     return (
 
-        <div style={styleObj}>
+        <div style={{ backgroundColor: x > W / 2 ? "blue" : "tomato",width:'100px' ,hight:'100hv'}}>
 
 
             <p>I am now on x:{x} and Y:{y} </p>
